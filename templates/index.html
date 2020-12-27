@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Predict Loan Grant</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='./style.css') }}">
+
+  <!--{{ url_for('static', filename='./style.css') }}-->
+
+</head>
+
+<body>
+	<div class="mx-auto" style="padding: 2%;">
+		<h1>Loan Prediction</h1>
+	</div>
+	
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-9 mx-auto">
+				<!-- Form to enter new data for predictions  -->
+				 <form action="{{ url_for('predict')}}" method="POST">
+					<div class="form-group row">
+						<div class="col-sm-6">
+							<input type="text" name="gender" placeholder="Gender" required="required" data-toggle="tooltip" data-placement="top" title="Male/Female" /><br>
+						</div>
+						<div class="col-sm-6">
+							<input type="text" name="married" placeholder="Married" required="required" data-toggle="tooltip" data-placement="top" title="Yes/No" /><br>
+						</div>
+					</div>
+					
+					<div class="form-group row">
+						<div class="col-sm-6">
+							<input type="text" name="dependents" placeholder="Dependents" required="required" data-toggle="tooltip" data-placement="top" title="No. of people dependent on the applicant (0,1,2,3+)" /><br>
+						</div>
+						<div class="col-sm-6">
+							<input type="text" name="education" placeholder="Education" required="required" data-toggle="tooltip" data-placement="top" title="Education level of the applicant (Graduated, Not Graduated)" /><br>
+						</div>				
+					</div>
+					
+					<div class="form-group row">
+						<div class="col-sm-6">
+							<input type="text" name="selfEmployed" placeholder="Self Employed" required="required" data-toggle="tooltip" data-placement="top" title="Yes/No" /><br>
+						</div>
+						<div class="col-sm-6">
+							<input type="text" name="loanAmount" placeholder="Loan Amount" required="required" data-toggle="tooltip" data-placement="top" title="Enter the loan amount for which you are applying." /><br>
+						</div>
+					</div>
+					
+					<div class="form-group row">
+						<div class="col-sm-6">
+								<input type="text" name="applicantIncome" placeholder="Applicant Income" required="required" data-toggle="tooltip" data-placement="top" title="Enter the applicant income."/><br>
+						</div>
+						<div class="col-sm-6">
+							<input type="text" name="coapplicantIncome" placeholder="Copplicant Income" required="required" data-toggle="tooltip" data-placement="top" title="Enter the coapplicant income."/><br>
+						</div>
+					</div>
+					
+					<div class="form-group row">
+						<div class="col-sm-6">
+							<input type="text" name="loanAmtTerm" placeholder="Loan Amount Term" required="required" data-toggle="tooltip" data-placement="top" title="Enter the loan amount duration (in days)" /><br>
+						</div>
+						<div class="col-sm-6">
+							<input type="text" name="creditHistory" placeholder="Credit History" required="required" data-toggle="tooltip" data-placement="top" title="1--> if all debts paid, 0--> otherwise" /><br>
+						</div>				
+					</div>
+					
+					<div class="form-group row justify-content-center">
+						<div class="col-sm-6">
+							<input type="text" name="propertyArea" placeholder="Property Area" required="required" data-toggle="tooltip" data-placement="top" title="Enter the Area" /><br>
+						</div>				
+					</div>
+					<br>
+					<br>				
+					
+					<button type="submit" class="btn btn-outline-primary btn-lg">Predict</button>
+				</form>
+			</div>
+		</div>
+ 
+
+	   <br>
+	   <br>
+
+	</div>
+	
+	{{pred}}
+	
+	<script type="text/javascript">
+	 $(function () {
+	  $('[data-toggle="tooltip"]').tooltip()
+	})
+	</script>
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"  integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous">
+	</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+2020-12-27 16:29:54,140:INFO:Initializing load_model()
+2020-12-27 16:29:54,140:INFO:load_model(verbose=True, authentication=None, platform=None, model_name=models/model_ridge.pkl)
+2020-12-27 16:30:25,232:INFO:Initializing load_model()
+2020-12-27 16:30:25,232:INFO:load_model(verbose=True, authentication=None, platform=None, model_name=models/model_ridge)
+2020-12-27 16:30:29,463:INFO:Initializing load_model()
+2020-12-27 16:30:29,463:INFO:load_model(verbose=True, authentication=None, platform=None, model_name=models/model_ridge)
+2020-12-27 16:34:06,410:INFO:Initializing predict_model()
+2020-12-27 16:34:06,410:INFO:predict_model(display=None, ml_usecase=MLUsecase.CLASSIFICATION, verbose=True, round=0, encoded_labels=False, probability_threshold=None, estimator=Pipeline(steps=[('dtypes',
+                 DataTypes_Auto_infer(ml_usecase='classification',
+                                      target='Loan_Status')),
+                ('imputer',
+                 Simple_Imputer(categorical_strategy='not_available',
+                                fill_value_categorical=None,
+                                fill_value_numerical=None,
+                                numeric_strategy='mean',
+                                target_variable=None)),
+                ('new_levels1',
+                 New_Catagorical_Levels_in_TestData(replacement_strategy='least '
+                                                                         'frequent'...
+                ('binn', 'passthrough'), ('rem_outliers', 'passthrough'),
+                ('cluster_all', 'passthrough'),
+                ('dummy', Dummify(target='Loan_Status')),
+                ('fix_perfect', Remove_100(target='Loan_Status')),
+                ('clean_names', Clean_Colum_Names()),
+                ('feature_select', 'passthrough'), ('fix_multi', 'passthrough'),
+                ('dfs', 'passthrough'), ('pca', 'passthrough'),
+                ['trained_model',
+                 RidgeClassifier(alpha=0.79, random_state=1624)]]))
+2020-12-27 16:34:06,410:INFO:Checking exceptions
+2020-12-27 16:34:06,410:INFO:Preloading libraries
+2020-12-27 16:36:35,711:INFO:Initializing load_model()
+2020-12-27 16:36:35,711:INFO:load_model(verbose=True, authentication=None, platform=None, model_name=models/model_ridge)
